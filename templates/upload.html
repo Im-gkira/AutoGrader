@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autograder</title>
 </head>
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css')}}">
 <body>
 
 <!--comment-->
@@ -74,6 +74,6 @@
 
 <!--comment-->
 </body>
-<script src="/static/script.js"></script>
+<script src="{{ url_for('static', filename='js/upload.js')}}"></script>
 
 </html>
