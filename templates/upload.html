@@ -1,25 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Autograder</title>
 </head>
+<link rel="stylesheet" href="/static/style.css">
 <body>
-    <h1>Upload new File</h1>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        {% for message in messages %}
-          <p>{{message}}</p>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
-    <form method=post enctype=multipart/form-data action="{{url_for('process')}}">
-      <input type=file name=file>
-      <br>
-      <br>
-      <input type=submit value=Upload>
-    </form>
+
+<!--comment-->
+
+<div class="header-container-wrapper">
+    <div class="header-container">
+        <div class="custom-header-bg">
+            <div class="page-center">
+                <div class="logo">Autograder</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="body-container-wrapper">
+    <div class="body-container">
+        <div class="page-center">
+
+
+            <i class="fa fa-cloud" aria-hidden="true"></i>
+            <h1>Upload Your <strong>Files</strong> To Autograder</h1>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <main class="main_full">
+                <div class="container">
+                    <div class="panel">
+                        <div class="button_outer">
+                            <div class="btn_upload">
+                                <form method=post enctype=multipart/form-data action="{{url_for('process')}}">
+                                        <input type="file" onchange="this.form.submit()" id="upload_file" name="file">
+                                    Upload Image
+                                </form>
+
+                            </div>
+                            <div class="processing_bar"></div>
+                            <div class="success_box"></div>
+                        </div>
+                    </div>
+                    <div class="error_msg"></div>
+                    <div class="uploaded_file_view" id="uploaded_view">
+                        <span class="file_remove">X</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+<div class="footer-container-wrapper">
+    <div class="footer-container">
+        <div class="custom-footer-bg">
+            <div class="page-center">
+                <p>@Copyright Autograder</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--comment-->
 </body>
+<script src="/static/script.js"></script>
+
 </html>

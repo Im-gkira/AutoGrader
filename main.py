@@ -4,13 +4,14 @@ from werkzeug.utils import secure_filename
 import os
 from flask_session import Session
 from pathlib import Path
-import grader
+# import grader
 
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024
 app.secret_key = "k2s04isthebestcompoundnameihaveeverheardinmahlife"
 app.config["SESSION_PERMANENT"] = False
+app.config['DEBUG'] = True
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
@@ -65,7 +66,7 @@ def process():
 
             Path(UPLOAD_FOLDER).mkdir(parents=True, exist_ok=True)
             file.save(file_path)
-            grader.grade(file_path)
+#             grader.grade(file_path)
             return redirect(url_for('complete'))
 
         flash("The File Format Must be JPG")
@@ -78,4 +79,4 @@ def complete():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
