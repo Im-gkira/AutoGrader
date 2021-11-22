@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 import os
 from flask_session import Session
 from pathlib import Path
-# import grader
+import grader
 
 
 app = Flask(__name__)
@@ -61,7 +61,7 @@ def process():
 
             Path(UPLOAD_FOLDER).mkdir(parents=True, exist_ok=True)
             file.save(file_path)
-            # grader.grade(file_path)
+            grader.grade(file_path)
             return redirect(url_for('complete'))
 
         flash("The File Format Must be JPG")
