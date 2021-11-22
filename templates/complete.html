@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Autograder</title>
 </head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/complete.css')}}">
+
 <body>
-    <img src="{{ url_for('static',filename='images/new0.jpg') }}" alt="Graded Image 1" height = 50% width = 50%>
-    <img src="{{ url_for('static',filename='images/new1.jpg') }}" alt="Graded Image 2" height = 50% width = 50%>
-    <img src="{{ url_for('static',filename='images/new2.jpg') }}" alt="Graded Image 3" height = 50% width = 50%>
-    <a href="{{ url_for('home') }}">Start Over</a>
+<div class="header-container-wrapper">
+    <div class="header-container">
+        <div class="custom-header-bg">
+            <div class="page-center">
+                <div class="logo">Result</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="body-container-wrapper">
+    <div class="body-container">
+        <div class="page-center">
+            <div class="img-src">
+                <img src="{{ url_for('static',filename='images/new0.jpg') }}" alt="Graded Image 1">
+                <img src="{{ url_for('static',filename='images/new1.jpg') }}" alt="Graded Image 2">
+                <img src="{{ url_for('static',filename='images/new2.jpg') }}" alt="Graded Image 3">
+            </div>
+        </div>
+            <div class="btn_container">
+                <div class="btn_panel">
+                    <div class="btn_outer">
+                        <div class="button_upload">
+                            <a href="{{ url_for('home') }}">Start Over</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class="footer-container-wrapper">
+    <div class="footer-container">
+        <div class="custom-footer-bg">
+            <div class="page-center">
+                <p>@Copyright Autograder</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </body>
 </html>
