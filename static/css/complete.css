@@ -1,0 +1,27 @@
+.img-src{
+ max-width: 100%;
+ max-height: 100%;
+ position: absolute;
+ top: 30%;
+ left:3%;
+}
+.btn_container {max-width: 1100px; padding: 0 20px; margin:0 auto;}
+.btn_panel {margin: 10px auto 40px; max-width: 500px; text-align: center;}
+.btn_outer {background: #83ccd3; border-radius:30px; text-align: center; height: 50px; width: 200px; display: inline-block; transition: .2s; position: relative; overflow: hidden;}
+.button_upload {padding: 17px 30px 12px; color: #fff; text-align: center; position: relative; display: inline-block; overflow: hidden; z-index: 3; white-space: nowrap;}
+.button_upload input {position: absolute; width: 100%; left: 0; top: 0; width: 100%; height: 105%; cursor: pointer; opacity: 0;}
+img {
+				display: inline-block;
+				max-width: 100%;
+				height: calc(100vh - 445px);
+				width: 30%;
+				margin: 1%;
+				border:5px solid;
+                border-image: linear-gradient(to bottom, #2b68c4 0%,#cf2d6e 100%)1;
+}
+
+a{
+color: white;
+font-weight: bolder;
+
+}
